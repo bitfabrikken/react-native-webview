@@ -120,6 +120,7 @@ static NSDictionary* customCertificatesForHost;
     super.backgroundColor = [RCTUIColor clearColor];
     #endif // !TARGET_OS_OSX
     _bounces = YES;
+    _bouncesZoom = YES;
     _scrollEnabled = YES;
     _showsHorizontalScrollIndicator = YES;
     _showsVerticalScrollIndicator = YES;
@@ -1177,6 +1178,14 @@ static NSDictionary* customCertificatesForHost;
   _bounces = bounces;
     //For UIRefreshControl to work correctly, the bounces should always be true
   _webView.scrollView.bounces = _pullToRefreshEnabled || bounces;
+}
+#endif // !TARGET_OS_OSX
+
+#if !TARGET_OS_OSX
+- (void)setBouncesZoom:(BOOL)bouncesZoom
+{
+  _bouncesZoom = bouncesZoom;
+  _webView.scrollView.bouncesZoom = bouncesZoom;
 }
 #endif // !TARGET_OS_OSX
 

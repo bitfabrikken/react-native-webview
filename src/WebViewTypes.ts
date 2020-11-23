@@ -313,6 +313,7 @@ export interface IOSNativeWebViewProps extends CommonNativeWebViewProps {
   automaticallyAdjustContentInsets?: boolean;
   autoManageStatusBarEnabled?: boolean;
   bounces?: boolean;
+  bouncesZoom?: boolean;
   contentInset?: ContentInsetProp;
   contentInsetAdjustmentBehavior?: ContentInsetAdjustmentBehavior;
   contentMode?: ContentMode;
@@ -336,6 +337,7 @@ export interface MacOSNativeWebViewProps extends CommonNativeWebViewProps {
   allowsLinkPreview?: boolean;
   automaticallyAdjustContentInsets?: boolean;
   bounces?: boolean;
+  bouncesZoom?: boolean;
   contentInset?: ContentInsetProp;
   contentInsetAdjustmentBehavior?: ContentInsetAdjustmentBehavior;
   directionalLockEnabled?: boolean;
@@ -362,6 +364,13 @@ export interface IOSWebViewProps extends WebViewSharedProps {
    * @platform ios
    */
   bounces?: boolean;
+
+  /**
+   * Boolean value that determines whether the web view bounces
+   * when it reaches the minimum or maximum zoom scale. The default value is `true`.
+   * @platform ios
+   */
+  bouncesZoom?: boolean;
 
   /**
    * A floating-point number that determines how quickly the scroll view
@@ -597,6 +606,13 @@ export interface MacOSWebViewProps extends WebViewSharedProps {
    * @platform macos
    */
   bounces?: boolean;
+
+  /**
+   * Boolean value that determines whether the web view bounces
+   * when it reaches the minimum or maximum zoom scale. The default value is `true`.
+   * @platform macos
+   */
+  bouncesZoom?: boolean;  
 
   /**
    * Boolean value that determines whether scrolling is enabled in the
